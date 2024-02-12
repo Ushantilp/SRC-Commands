@@ -60,35 +60,3 @@
 	});
 })();
 
-/*
-TODO:
-
-9. 	PB Command schreiben 
-8. 	PB um Individual Level erweitern
-7. 	Merging IlHandler.js und LvLHandler.js
-6. 	ID & Kürzel & Name Nutzbar machen
-5.	Namen ausgeben lassen für Game, Category und Variablen (getname Command)
-4. 	Weitere Variablen erst ermöglichen wenn vorherige gesetzt wurden
-		(if var ID1 undefined = nutze erst var ID1 usw.)
-3.	Wenn datenbank eintrag "Null" oder "undefined" entsprechende Fehlermeldung ausgeben
-2. 	Code aufräumen [WIP]
-1.	Credits hinzufügen
-
-DONE:
-1. 	ID Commands überarbeiten (set, del, get)
-2. 	Variablen Löschbar machen?
-3. 	Modes aus den Commands entfernen
-4.	Variablen Call Fixen
-		(variablen wurden im call nicht mit einbezogen)
-5.  Workaround für den PB Command geschrieben
-6. 	Mode Handling überarbeiten
-		!addmode [erstellt einen neuen Mode]?,
-		!setmode [legt einen Mode fest]?,
-		!listmode [listet alle Modes auf],
-		!getmode [gibt den aktuellen Mode aus]
-7.	WR Command um Individual Level erweitern 
-8.	WRHandler an Mehrspieler Spiele anpassen
-		(anzeige von mehr als einem Spieler)
-9.	WRHandler.js Error ausgabe wenn keine Runs gefunden werden
-		(Weil zB mit den Entsprechenden Variablen keine Runs gibt )
-*/
