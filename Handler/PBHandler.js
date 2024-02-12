@@ -1,3 +1,8 @@
+/*################################### INFO ######################################*/
+/*This Script is Completely work in Progress and i'm testing Around with some Parts of the WE Handler Code to get what i want to do with the PBHandler
+ATM: It didn't work as intendet*/
+/*################################### INFO ######################################*/
+
 (function () {
 	//Database Handling
 	// Read current state from database
