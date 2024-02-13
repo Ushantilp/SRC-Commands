@@ -99,12 +99,11 @@ ATM: It didn't work as intendet and some parts are Only test Snippeds*/
 						if (TestCallTest == 'p12pd7kq') {
 							TestCallTrueTest = Testcall.data[TestCounter].comment
 							$.consoleLn(TestCallTrueTest);
-							$.consoleLn("Test sollte klappen");
+							$.consoleLn("Test sollte klappen^^11Elf");
 					}
 				}
 			}
 			/* ########################## Testing Stuff Ende ######################### */
-
 			
 			/* ######################### PB Workaround Start ######################### */
 
