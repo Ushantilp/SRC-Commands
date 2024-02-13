@@ -77,36 +77,56 @@ ATM: It didn't work as intendet and some parts are Only test Snippeds*/
 				$.say("Please set a mode.");
 				return;
 			}
+			response1 = JSON.parse($.customAPI.get(url + querystring).content);
+			var catName = response1.data.category.data.name,
+				gameName = response1.data.game.data.names.international,
 			playerCall = playerJSON.data.names.international
 
 			/* ########################## Testing Stuff Start ######################### */
 
-			Testi = 'https://www.speedrun.com/api/v1/runs?user=8lo6q648&category=02q4qwyd&status=verified'
+			Testi = 'https://www.speedrun.com/api/v1/runs?user=' + player + '&category=' + category +'&status=verified&orderby=date&direction=desc'
 			Testcall = JSON.parse($.customAPI.get(Testi).content);
 			TestCounter = 0;
+			VarTestp1 = var1.split("=")[0]
+			VarTestp2 = var1.split("=")[1]
+			Var2Testp1 = var2.split("=")[0]
+			Var2Testp2 = var2.split("=")[1]
 
-			TestTestcall = Testcall.data[0].values['5ly1gx9l']
-//			$.consoleLn(TestTestcall)
+			TestTestcall = Testcall.data[0].values[VarTestp1]
+			TestTestcall2 = Testcall.data[0].values[Var2Testp1]
 
-
-				if (Testcall.data[0].values['5ly1gx9l'] != 'p12pd7kq') {
-					for (var TestCounter; TestCounter <= 5; TestCounter++) {
-						try {
-						TestCallTest = Testcall.data[TestCounter].values['5ly1gx9l']
-						//					$.consoleLn(TestCounter)
-							if (TestCallTest == undefined); }
-						catch (err) { };
-						if (TestCallTest == 'p12pd7kq') {
-							TestCallTrueTest = Testcall.data[TestCounter].comment
-							$.consoleLn(TestCallTrueTest);
-							$.consoleLn("Test sollte klappen^^11Elf");
-					}
-				}
+			// PB Call Loop
+			if (TestTestcall == VarTestp2 && TestTestcall2 == Var2Testp2) {
+				TestCallTest = Testcall.data[TestCounter].values[VarTestp1];
+				TestCallTest2 = Testcall.data[TestCounter].values[Var2Testp1];
 			}
+			else (TestTestcall != VarTestp2 || TestTestcall2 != Var2Testp2); {
+				for (var TestCounter; TestCounter <= 15; TestCounter++) {
+						try {
+						TestCallTest = Testcall.data[TestCounter].values[VarTestp1]
+						TestCallTest2 = Testcall.data[TestCounter].values[Var2Testp1]
+					if (TestCallTest == undefined || TestCallTest2 == undefined);
+					}
+					catch (err) { };
+						if (TestCallTest == VarTestp2 && TestCallTest2 == Var2Testp2) {
+							var bestTime = Testcall.data[TestCounter].times.primary
+							var NoTime = Testcall.data[TestCounter].times.primary
+							bestTime = bestTime.replace('H', 'h ');
+							bestTime = bestTime.replace('M', 'm ');
+							bestTime = bestTime.replace('S', 's');
+							var TestTime = bestTime.substring(2)
+							break;
+						}
+					}
+			}
+			if (NoTime == undefined) {
+				$.say("There is no PB for '" + gameName + "' - '" + catName + "' from " + playerCall);
+			}
+			else $.consoleLn("Time Test Call: " + playerCall +"'s PB in " + gameName + " - " + catName + " is " + TestTime);
 			/* ########################## Testing Stuff Ende ######################### */
-			
-			/* ######################### PB Workaround Start ######################### */
 
+			/* ######################### PB Workaround Start ######################### */
+//			$.consoleLn()
 		}
 
 	});
