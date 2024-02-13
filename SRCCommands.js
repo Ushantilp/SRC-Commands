@@ -44,8 +44,6 @@
 		$.registerChatCommand('./custom/SRC-Commands/Handler/VarHandler.js', 'getvar', 2);
 //		$.registerChatCommand('./custom/SRC-Commands/Handler/VarHandler.js', 'getvarname', 2);
 		//Other Data Handling
-		$.registerChatCommand('./custom/SRC-Commands/Handler/PBHandler.js', 'setpb', 2);
-		$.registerChatCommand('./custom/SRC-Commands/Handler/PBHandler.js', 'delpb', 2);
 		$.registerChatCommand('./custom/SRC-Commands/Handler/GoalHandler.js', 'setgoal', 2);
 		$.registerChatCommand('./custom/SRC-Commands/Handler/GoalHandler.js', 'delgoal', 2);
 		$.registerChatCommand('./custom/SRC-Commands/Handler/LastRunHandler.js', 'setlr', 2);

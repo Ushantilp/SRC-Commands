@@ -13,30 +13,6 @@ ATM: It didn't work as intendet and some parts are Only test Snippeds*/
 			argument = String(event.getArguments()),
 			sender = event.getSender();
 
-		/* ########################## PB Workaround ######################### */
-		// Set PB
-		if (command.equalsIgnoreCase('setpb')) {
-			if (args.length < 1) {
-				$.say("Usage: !setpb {PB Time}.");
-				return;
-			}
-			var modeName = $.getIniDbString('SRCstates', 'currentState', state),
-				pbData = argument.slice(modeName+1);
-			$.setIniDbString('SRCTablePB', modeName, pbData);
-			$.say("PB time for " + modeName + " successfully set!");
-		}
-
-		// Del PB
-		if (command.equalsIgnoreCase('delpb')) {
-			if (args.length > 0) {
-				$.say("Usage: !delpb");
-				return;
-			}
-			var modeName = $.getIniDbString('SRCstates', 'currentState', state);
-			$.setIniDbString('SRCTablePB', modeName, 'undefined');
-			$.say("PB Time for " + modeName + " successfully deleted!");
-		}
-
 		// Read PB
 		if (command.equalsIgnoreCase('pb')) {
 			var modeName = $.getIniDbString('SRCstates', 'currentState', state),
