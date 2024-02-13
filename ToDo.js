@@ -1,8 +1,7 @@
 /*
 ##TODO 
-TODO 11: PB Command schreiben 
-TODO 10: Im PBHandler Error Handling wenn kein PB verfügbar (Halb Implementiert)
-TODO 09: PB um Individual Level erweitern
+TODO 10: PB um Individual Level erweitern
+TODO 09: Im PBHandler Error Handling wenn kein PB verfügbar (Halb Implementiert)
 TODO 08: Caller der die IDs aus der URL abruft schreiben
 TODO 07: Merging IlHandler.js und LvLHandler.js
 TODO 06: ID & Kürzel & Name Nutzbar machen
@@ -30,4 +29,5 @@ DONE 08: WRHandler an Mehrspieler Spiele anpassen
 			(anzeige von mehr als einem Spieler)
 DONE 09: WRHandler.js Error ausgabe wenn keine Runs gefunden werden
 			(Weil zB mit den Entsprechenden Variablen keine Runs gibt )
+DONE 10: PB Command schreiben 
 */
