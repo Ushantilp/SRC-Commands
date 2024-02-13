@@ -20,10 +20,6 @@
 		$.registerChatCommand('./custom/SRC-Commands/Handler/PlayerHandler.js', 'delplayerid', 2);
 		$.registerChatCommand('./custom/SRC-Commands/Handler/PlayerHandler.js', 'getplayerid', 2);
 		$.registerChatCommand('./custom/SRC-Commands/Handler/PlayerHandler.js', 'getplayername', 2);
-		// IL Handling
-		$.registerChatCommand('./custom/SRC-Commands/Handler/IlHandler.js', 'setil', 2);
-		$.registerChatCommand('./custom/SRC-Commands/Handler/IlHandler.js', 'delil', 2);
-		$.registerChatCommand('./custom/SRC-Commands/Handler/IlHandler.js', 'getil', 2);
 		//Game ID Handling
 		$.registerChatCommand('./custom/SRC-Commands/Handler/GameHandler.js', 'setgameid', 2);
 		$.registerChatCommand('./custom/SRC-Commands/Handler/GameHandler.js', 'delgameid', 2);
@@ -38,6 +34,10 @@
 		$.registerChatCommand('./custom/SRC-Commands/Handler/LvLHandler.js', 'setlvl', 2);
 		$.registerChatCommand('./custom/SRC-Commands/Handler/LvLHandler.js', 'dellvl', 2);
 		$.registerChatCommand('./custom/SRC-Commands/Handler/LvLHandler.js', 'getlvl', 2);
+		// IL Handling
+		$.registerChatCommand('./custom/SRC-Commands/Handler/IlHandler.js', 'setil', 2);
+		$.registerChatCommand('./custom/SRC-Commands/Handler/IlHandler.js', 'delil', 2);
+		$.registerChatCommand('./custom/SRC-Commands/Handler/IlHandler.js', 'getil', 2);
 		//Variables ID Handling
 		$.registerChatCommand('./custom/SRC-Commands/Handler/VarHandler.js', 'setvar', 2);
 		$.registerChatCommand('./custom/SRC-Commands/Handler/VarHandler.js', 'delvar', 2);
