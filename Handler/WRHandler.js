@@ -56,7 +56,7 @@
 				isIL = $.getIniDbString('SRCTableILstate', modeName, state);
 				response1 = JSON.parse($.customAPI.get(url + querystring).content);
 				if (response1.data.runs.length < 1) {
-					$.say('There are no Runs in the Leaderboard this Game/Category')
+					$.say('There are no Runs in the Leaderboard for this Game/Category')
 					return
 				}
 
@@ -222,13 +222,33 @@
 
 					var response2 = JSON.parse($.customAPI.get(url + varString + querystring).content);
 					if (response2.data.runs.length < 1) {
-						$.say('There are no Runs in the Leaderboard this Game/Category')
+						$.say('There are no Runs in the Leaderboard for this Game/Category')
 						return
 					}
 					responseRunner = JSON.parse($.customAPI.get(response2.data.runs[0].run.players[0].uri).content);
 					var catName = response2.data.category.data.name;
 					gameName = response2.data.game.data.names.international;
-					varValue = response2.data.variables.data[0].values.values[var1.split("=")[1]].label;
+					VarCounter = 0;
+					Var1p1 = var1.split("=")[0]
+					Var1p2 = var1.split("=")[1]
+
+					var varValue = response2.data.variables.data[0].values.values;
+					if (varValue == Var1p2) {
+						varValue = response2.data.variables.data[VarCounter].values.values[Var1p2].label
+					}
+					else (varValue != Var1p2); {
+						for (var VarCounter; VarCounter <= 9; VarCounter++) {
+							try {
+								VarValue = response2.data.variables.data[VarCounter].values.values[Var1p2].label
+								if (VarValue == undefined);
+							}
+							catch (err) { };
+							if (VarValue != undefined) {
+								var VarValue = VarValue = response2.data.variables.data[VarCounter].values.values[Var1p2].label
+								break;
+							}
+						}
+					}
 						bestTime = response2.data.runs[0].run.times.primary;
 					bestTime = bestTime.replace('H', 'h ');
 					bestTime = bestTime.replace('M', 'm ');
@@ -329,7 +349,7 @@
 			isIL = $.getIniDbString('SRCTableILstate', modeName, state);
 			responseIL1 = JSON.parse($.customAPI.get(urlLvlIL + querystring).content);
 			if (responseIL1.data.runs.length < 1) {
-				$.say('There are no IL Runs in the Leaderboard this Game/Category')
+				$.say('There are no IL Runs in the Leaderboard for this Game/Category')
 				return
 			}
 
@@ -501,7 +521,7 @@
 
 				var responseIL2 = JSON.parse($.customAPI.get(urlLvlIL + varString + querystring).content);
 				if (responseIL2.data.runs.length < 1) {
-					$.say('There are no IL Runs in the Leaderboard this Game/Category')
+					$.say('There are no IL Runs in the Leaderboard for this Game/Category')
 					return
 				}
 				var lvlGame = lvlGameJSON.data.names.international;
