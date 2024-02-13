@@ -91,24 +91,29 @@ ATM: It didn't work as intendet and some parts are Only test Snippeds*/
 			VarTestp2 = var1.split("=")[1]
 			Var2Testp1 = var2.split("=")[0]
 			Var2Testp2 = var2.split("=")[1]
+			Var3Testp1 = var3.split("=")[0]
+			Var3Testp2 = var3.split("=")[1]
 
 			TestTestcall = Testcall.data[0].values[VarTestp1]
 			TestTestcall2 = Testcall.data[0].values[Var2Testp1]
+			TestTestcall3 = Testcall.data[0].values[Var3Testp1]
 
 			// PB Call Loop
-			if (TestTestcall == VarTestp2 && TestTestcall2 == Var2Testp2) {
+			if (TestTestcall == VarTestp2 && TestTestcall2 == Var2Testp2 && TestTestcall3 == Var3Testp2) {
 				TestCallTest = Testcall.data[TestCounter].values[VarTestp1];
 				TestCallTest2 = Testcall.data[TestCounter].values[Var2Testp1];
+				TestCallTest3 = Testcall.data[TestCounter].values[Var3Testp1];
 			}
-			else (TestTestcall != VarTestp2 || TestTestcall2 != Var2Testp2); {
-				for (var TestCounter; TestCounter <= 15; TestCounter++) {
+			else (TestTestcall != VarTestp2 || TestTestcall2 != Var2Testp2 || TestTestcall3 != Var3Testp2); {
+				for (var TestCounter; TestCounter <= 11; TestCounter++) {
 						try {
 						TestCallTest = Testcall.data[TestCounter].values[VarTestp1]
 						TestCallTest2 = Testcall.data[TestCounter].values[Var2Testp1]
-					if (TestCallTest == undefined || TestCallTest2 == undefined);
+						TestCallTest3 = Testcall.data[TestCounter].values[Var3Testp1]
+							if (TestCallTest == undefined || TestCallTest2 == undefined || TestCallTest3 == undefined);
 					}
-					catch (err) { };
-						if (TestCallTest == VarTestp2 && TestCallTest2 == Var2Testp2) {
+						catch (err) { };
+					if (TestCallTest == VarTestp2 && TestCallTest2 == Var2Testp2 && TestCallTest3 == Var3Testp2) {
 							var bestTime = Testcall.data[TestCounter].times.primary
 							var NoTime = Testcall.data[TestCounter].times.primary
 							bestTime = bestTime.replace('H', 'h ');
@@ -120,7 +125,7 @@ ATM: It didn't work as intendet and some parts are Only test Snippeds*/
 					}
 			}
 			if (NoTime == undefined) {
-				$.say("There is no PB for '" + gameName + "' - '" + catName + "' from " + playerCall);
+				$.consoleLn("There is no PB for '" + gameName + "' - '" + catName + "' from " + playerCall);
 			}
 			else $.consoleLn("Time Test Call: " + playerCall +"'s PB in " + gameName + " - " + catName + " is " + TestTime);
 			/* ########################## Testing Stuff Ende ######################### */
