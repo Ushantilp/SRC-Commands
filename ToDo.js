@@ -1,6 +1,7 @@
 /*
 ##TODO 
-TODO 10: PB Command schreiben 
+TODO 11: PB Command schreiben 
+TODO 10: Im PBHandler Error Handling wenn kein PB verfügbar (Halb Implementiert)
 TODO 09: PB um Individual Level erweitern
 TODO 08: Caller der die IDs aus der URL abruft schreiben
 TODO 07: Merging IlHandler.js und LvLHandler.js
