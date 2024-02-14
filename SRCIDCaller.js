@@ -8,7 +8,7 @@
 	// URL ID Caller
 		if (command.equalsIgnoreCase('callid')) {
 			if (args.length != 1) {
-				$.consoleLn("Usage: !callid {Leaderboard URL from Speedrun.com");
+				$.consoleLn("Usage: !callid {Leaderboard URL from Speedrun.com}");
 				return;
 			}
 			var URLCall = String(args[0]),
