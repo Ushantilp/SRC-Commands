@@ -1,6 +1,6 @@
 /*################################### INFO ######################################*/
-/*This Script is Completely work in Progress and i'm testing Around with some Parts of the WE Handler Code to get what i want to do with the PBHandler
-ATM: It didn't work as intendet and some parts are Only test Snippeds*/
+/*This Script is Completely work in Progress, IL Stuff is missing
+ATM: It work as intendet only the IL Stuff don't work*/
 /*################################### INFO ######################################*/
 
 (function () {
@@ -77,7 +77,6 @@ ATM: It didn't work as intendet and some parts are Only test Snippeds*/
 						gameName = response1.data.game.data.names.international,
 						playerCall = playerJSON.data.names.international
 
-					/* ########################## Testing Stuff Start ######################### */
 					// PB Call
 					PBVarCounter = 0;
 					PBVar1p1 = var1.split("=")[0]
@@ -151,7 +150,6 @@ ATM: It didn't work as intendet and some parts are Only test Snippeds*/
 						$.say(playerCall + "has no PB in " + gameName + " - " + catName);
 					}
 					else $.say(playerCall + "'s PB for " + gameName + " - " + catName + " is " + PBTime);
-					/* ########################## Testing Stuff Ende ######################### */
 
 				}
 
@@ -261,7 +259,6 @@ ATM: It didn't work as intendet and some parts are Only test Snippeds*/
 
 					playerCall = playerJSON.data.names.international
 
-					/* ########################## Testing Stuff Start ######################### */
 					// PB Call
 					PBVarCounter = 0;
 					PBVar1p1 = var1.split("=")[0]
