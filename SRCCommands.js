@@ -54,7 +54,7 @@
 		$.registerChatCommand('./custom/SRC-Commands/Handler/GoalHandler.js', 'goal', 7);
 		$.registerChatCommand('./custom/SRC-Commands/Handler/LastRunHandler.js', 'lr', 7);
 		$.registerChatCommand('./custom/SRC-Commands/Handler/LBHandler.js', 'lb', 7);
-		//Caller Test
+		//ID Caller
 		$.registerChatCommand('./custom/SRC-Commands/SRCIDCaller.js', 'callid', 2);
 	
 	});
