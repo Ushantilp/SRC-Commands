@@ -1,5 +1,6 @@
 /*
 ##TODO 
+TODO 10: Leaderboard Call in LBHandler.js fertig schreiben
 TODO 09: PB um Individual Level erweitern
 TODO 08: Im PBHandler Error Handling wenn kein PB verfügbar (Halb Implementiert)
 TODO 07: Merging IlHandler.js und LvLHandler.js
