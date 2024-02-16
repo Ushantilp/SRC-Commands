@@ -76,7 +76,7 @@ ATM: It work as intendet only the IL Stuff don't work*/
 				response1 = JSON.parse($.customAPI.get(url + querystring).content);
 				if (response1.data.runs.length < 1) {
 					$.say('There are no Runs in the Leaderboard for this Game/Category')
-					return
+					return;
 				}
 
 				// Build No varString (example: ID12313154=Value23525)
@@ -379,7 +379,7 @@ ATM: It work as intendet only the IL Stuff don't work*/
 			responseIL1 = JSON.parse($.customAPI.get(urlLvlIL + querystring).content);
 			if (responseIL1.data.runs.length < 1) {
 				$.say('There are no IL Runs in the Leaderboard for this Game/Category')
-				return
+				return;
 			}
 
 			// Build No varString (example: ID12313154=Value23525)
