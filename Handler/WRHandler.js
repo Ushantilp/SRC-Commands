@@ -68,7 +68,7 @@
 						bestTime = response1.data.runs[0].run.times.primary;
 					bestTime = bestTime.replace('H', 'h ');
 					bestTime = bestTime.replace('M', 'm ');
-					bestTime = bestTime.replace('S', 's');
+					bestTime = bestTime.replace('S', 's ');
 
 					// Runner & Guest Calls
 					var RunnerCall = response1.data.runs[0].run.players;
@@ -140,7 +140,7 @@
 					}
 
 
-					$.say("The current WR for " + gameName + " - " + catName + " is " + bestTime.substring(2) + " by " + runnerString);
+					$.say("The current WR for " + gameName + " - " + catName + " is " + bestTime.substring(2) + "by " + runnerString);
 
 				}
 
@@ -252,8 +252,7 @@
 						bestTime = response2.data.runs[0].run.times.primary;
 					bestTime = bestTime.replace('H', 'h ');
 					bestTime = bestTime.replace('M', 'm ');
-					bestTime = bestTime.replace('S', 's');
-//					runnerName1 = responseRunner.data.names.international;
+					bestTime = bestTime.replace('S', 's ');
 
 
 					var valueString = "";
@@ -339,7 +338,7 @@
 						var runnerString = Runner0Name + ", " + Runner1Name + ", " + Runner2Name + ", " + Runner3Name + " & " + Runner4Name;
 					}
 
-					$.say("The current WR for " + gameName + " - " + catName + valueString + " is " + bestTime.substring(2) + " by " + runnerString);
+					$.say("The current WR for " + gameName + " - " + catName + valueString + " is " + bestTime.substring(2) + "by " + runnerString);
 
 				}
 			}
@@ -362,10 +361,10 @@
 				if (ilvar != 'undefined') {
 					lvlILName = lvlILNameJSON.data.values.values[ilvar.split("=")[1]].label;
 				}
-				bestTime = responseIL.data.runs[0].run.times.primary;
+				bestTime = responseIL1.data.runs[0].run.times.primary;
 				bestTime = bestTime.replace('H', 'h ');
 				bestTime = bestTime.replace('M', 'm ');
-				bestTime = bestTime.replace('S', 's');
+				bestTime = bestTime.replace('S', 's ')
 
 
 				// Runner & Guest Calls
@@ -439,9 +438,9 @@
 				}
 
 				if (ilvar != 'undefined') {
-					$.say("The current IL WR for " + lvlGame + " - " + lvlCat + " (" + lvlName + ": " + lvlILName + ") is " + bestTime.substring(2) + " by " + runnerString);
+					$.say("The current IL WR for " + lvlGame + " - " + lvlCat + " (" + lvlName + ": " + lvlILName + ") is " + bestTime.substring(2) + "by " + runnerString);
 				}
-				else ($.say("The current IL WR for " + lvlGame + " - " + lvlCat + " (" + lvlName + ") is " + bestTime.substring(2) + " by " + runnerString))
+				else ($.say("The current IL WR for " + lvlGame + " - " + lvlCat + " (" + lvlName + ") is " + bestTime.substring(2) + "by " + runnerString))
 
 			}
 		
@@ -533,7 +532,7 @@
 				bestTime = responseIL2.data.runs[0].run.times.primary;
 				bestTime = bestTime.replace('H', 'h ');
 				bestTime = bestTime.replace('M', 'm ');
-				bestTime = bestTime.replace('S', 's');
+				bestTime = bestTime.replace('S', 's ')
 
 				var valueString = "";
 				var variables = responseIL2.data.variables.data;
@@ -619,7 +618,7 @@
 				}
 				
 
-				$.say("The current IL WR for " + lvlGame + " - " + lvlCat + " (" + lvlName + ": " + lvlILName + ") " + valueString + " is " + bestTime.substring(2) + " by " + runnerString);
+				$.say("The current IL WR for " + lvlGame + " - " + lvlCat + " (" + lvlName + ": " + lvlILName + ") " + valueString + " is " + bestTime.substring(2) + "by " + runnerString);
 
 				
 			}
