@@ -1,8 +1,3 @@
-/*################################### INFO ######################################*/
-/*This Script is Completely work in Progress, IL Stuff is missing
-ATM: It work as intendet only the IL Stuff don't work*/
-/*################################### INFO ######################################*/
-
 (function () {
 	//Database Handling
 	// Read current state from database
