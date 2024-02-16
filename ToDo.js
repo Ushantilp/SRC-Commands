@@ -1,7 +1,6 @@
 /*
 ##TODOs & Ideas
-TODO 11: Leaderboard Call in LBHandler.js fertig schreiben
-TODO 10: PB um Individual Level erweitern
+TODO 10: Leaderboard Call in LBHandler.js fertig schreiben
 TODO 09: LBHandler.js um Individual Level erweitern
 TODO 08: Im PBHandler Error Handling wenn kein PB verfügbar (Halb Implementiert)
 TODO 07: Merging IlHandler.js und LvLHandler.js
@@ -32,4 +31,5 @@ DONE 09: WRHandler.js Error ausgabe wenn keine Runs gefunden werden
 			(Weil zB mit den Entsprechenden Variablen keine Runs gibt )
 DONE 10: PB Command schreiben 
 DONE 11: Caller der die IDs aus der URL abruft schreiben
+DONE 12: PB um Individual Level erweitern
 */
