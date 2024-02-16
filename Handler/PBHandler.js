@@ -65,6 +65,11 @@ ATM: It work as intendet only the IL Stuff don't work*/
 				$.say('Set a Player ID first! Usage: !setplayerid {SRC-User ID}');
 				return;
 			}
+			if (game == '' || game == 'undefined') {
+				$.say('Set a Game ID first! Usage: !setgameid {SRC-Game ID}');
+				return;
+			}
+
 			// Individual Level is False
 			if (isIL != 'true') {
 				isIL = $.getIniDbString('SRCTableILstate', modeName, state);
@@ -81,6 +86,10 @@ ATM: It work as intendet only the IL Stuff don't work*/
 						gameName = response1.data.game.data.names.international,
 						playerCall = playerJSON.data.names.international
 
+					if (PbJSON.data == '') {
+						$.say(playerCall + " has no PB in " + gameName + " - " + catName);
+						return;
+					}
 
 					// PB Call
 					PBVarCounter = 0;
@@ -126,20 +135,20 @@ ATM: It work as intendet only the IL Stuff don't work*/
 						PBCall9 = PbJSON.data[PBVarCounter].values[PBVar9p1];
 					}
 					else (PBVar1Call != PBVar1p2 || PBVar2Call != PBVar2p2 || PBVar3Call != PBVar3p2 || PBVar4Call != PBVar4p2 || PBVar5Call != PBVar5p2 || PBVar6Call != PBVar6p2 || PBVar7Call != PBVar7p2 || PBVar8Call != PBVar8p2 || PBVar9Call != PBVar9p2); {
-						for (var PBVarCounter; PBVarCounter <= 11; PBVarCounter++) {
-							try {
-								PBCall1 = PbJSON.data[PBVarCounter].values[PBVar1p1]
-								PBCall2 = PbJSON.data[PBVarCounter].values[PBVar2p1]
-								PBCall3 = PbJSON.data[PBVarCounter].values[PBVar3p1]
-								PBCall4 = PbJSON.data[PBVarCounter].values[PBVar4p1]
-								PBCall5 = PbJSON.data[PBVarCounter].values[PBVar5p1]
-								PBCall6 = PbJSON.data[PBVarCounter].values[PBVar6p1]
-								PBCall7 = PbJSON.data[PBVarCounter].values[PBVar7p1]
-								PBCall8 = PbJSON.data[PBVarCounter].values[PBVar8p1]
-								PBCall9 = PbJSON.data[PBVarCounter].values[PBVar9p1]
-								if (PBCall1 == undefined || PBCall2 == undefined || PBCall3 == undefined || PBCall4 == undefined || PBCall5 == undefined || PBCall6 == undefined || PBCall7 == undefined || PBCall8 == undefined || PBCall9 == undefined);
-							}
-							catch (err) { };
+							for (var PBVarCounter; PBVarCounter <= 11; PBVarCounter++) {
+								try {
+									PBCall1 = PbJSON.data[PBVarCounter].values[PBVar1p1]
+									PBCall2 = PbJSON.data[PBVarCounter].values[PBVar2p1]
+									PBCall3 = PbJSON.data[PBVarCounter].values[PBVar3p1]
+									PBCall4 = PbJSON.data[PBVarCounter].values[PBVar4p1]
+									PBCall5 = PbJSON.data[PBVarCounter].values[PBVar5p1]
+									PBCall6 = PbJSON.data[PBVarCounter].values[PBVar6p1]
+									PBCall7 = PbJSON.data[PBVarCounter].values[PBVar7p1]
+									PBCall8 = PbJSON.data[PBVarCounter].values[PBVar8p1]
+									PBCall9 = PbJSON.data[PBVarCounter].values[PBVar9p1]
+									if (PBCall1 == undefined || PBCall2 == undefined || PBCall3 == undefined || PBCall4 == undefined || PBCall5 == undefined || PBCall6 == undefined || PBCall7 == undefined || PBCall8 == undefined || PBCall9 == undefined);
+								}
+								catch (err) { };
 							if (PBCall1 == PBVar1p2 && PBCall2 == PBVar2p2 && PBCall3 == PBVar3p2 && PBCall4 == PBVar4p2 && PBCall5 == PBVar5p2 && PBCall6 == PBVar6p2 && PBCall7 == PBVar7p2 && PBCall8 == PBVar8p2 && PBCall9 == PBVar9p2) {
 								var bestTime = PbJSON.data[PBVarCounter].times.primary
 								var NoTime = PbJSON.data[PBVarCounter].times.primary
@@ -153,12 +162,12 @@ ATM: It work as intendet only the IL Stuff don't work*/
 						}
 					}
 					if (NoTime == undefined) {
-						$.say(playerCall + "has no PB in " + gameName + " - " + catName);
+						$.say(playerCall + " has no PB in " + gameName + " - " + catName);
 					}
 					else $.say(playerCall + "'s PB for " + gameName + " - " + catName + " is " + PBTime);
 
 				}
-
+				
 				// Build varString (example: ID12313154=Value23525)
 				if (var1 != 'undefined' || var2 != 'undefined' || var3 != 'undefined' || var4 != 'undefined' || var5 != 'undefined' || var6 != 'undefined' || var7 != 'undefined' || var8 != 'undefined' || var9 != 'undefined') {
 					if (var1 != "undefined") {
@@ -264,6 +273,24 @@ ATM: It work as intendet only the IL Stuff don't work*/
 					}
 
 					playerCall = playerJSON.data.names.international
+					var valueString = "";
+					var variables = response2.data.variables.data;
+					variables.forEach(function (variable) {
+						varValueArray.forEach(function (value) {
+							if (variable.values.values[value] != undefined) {
+								valueString = valueString + variable.values.values[value].label + ', '
+							}
+						})
+					})
+					if (valueString) {
+						valueString = valueString.substring(0, valueString.length - 2)
+						valueString = " [" + valueString + "]"
+					}
+
+					if (PbJSON.data == '') {
+						$.say(playerCall + " has no PB in " + gameName + " - " + catName + valueString);
+						return;
+					}
 
 					// PB Call
 					PBVarCounter = 0;
@@ -335,22 +362,9 @@ ATM: It work as intendet only the IL Stuff don't work*/
 							}
 						}
 					}
-					var valueString = "";
-					var variables = response2.data.variables.data;
-					variables.forEach(function (variable) {
-						varValueArray.forEach(function (value) {
-							if (variable.values.values[value] != undefined) {
-								valueString = valueString + variable.values.values[value].label + ', '
-							}
-						})
-					})
-					if (valueString) {
-						valueString = valueString.substring(0, valueString.length - 2)
-						valueString = " [" + valueString + "]"
-					}
 
 					if (NoTime == undefined) {
-						$.say(playerCall + "has no PB in " + gameName + " - " + catName + valueString);
+						$.say(playerCall + " has no PB in " + gameName + " - " + catName + valueString);
 					}
 					else $.say(playerCall + "'s PB for " + gameName + " - " + catName + valueString + " is " + PBTime);
 
@@ -375,9 +389,14 @@ ATM: It work as intendet only the IL Stuff don't work*/
 				lvlCat = lvlCatJSON.data.name;
 				lvlName = lvlJSON.data.name;
 				if (ilvar != 'undefined') {
-					lvlILName = lvlILNameJSON.data.values.values[ilvar.split("=")[1]].label;
+					var lvlILName = lvlILNameJSON.data.values.values[ilvar.split("=")[1]].label;
 				}
 				playerCall = playerJSON.data.names.international
+
+				if (PbJSON.data == '') {
+					$.say(playerCall + " has no PB in " + lvlGame + " - " + lvlCat + " (" + lvlName + ")");
+					return;
+				}
 
 
 				// PB Call
@@ -455,7 +474,7 @@ ATM: It work as intendet only the IL Stuff don't work*/
 					}
 				}
 				if (NoTime == undefined) {
-					$.say(playerCall + "has no PB in " + lvlGame + " - " + lvlCat + " (" + lvlName + ": " + lvlILName + ")");
+					$.say(playerCall + " has no PB in " + lvlGame + " - " + lvlCat + " (" + lvlName + ")");
 				}
 				else $.say(playerCall + "'s PB for " + lvlGame + " - " + lvlCat + " (" + lvlName + ") is " + PBTime);
 
@@ -567,8 +586,25 @@ ATM: It work as intendet only the IL Stuff don't work*/
 						}
 					}
 				}
-
 				playerCall = playerJSON.data.names.international
+				var valueString = "";
+				var variables = responseIL2.data.variables.data;
+				variables.forEach(function (variable) {
+					varValueArray.forEach(function (value) {
+						if (variable.values.values[value] != undefined) {
+							valueString = valueString + variable.values.values[value].label + ', '
+						}
+					})
+				})
+				if (valueString) {
+					valueString = valueString.substring(0, valueString.length - 2)
+					valueString = " [" + valueString + "]"
+				}
+
+				if (PbJSON.data == '') {
+					$.say(playerCall + " has no PB in " + lvlGame + " - " + lvlCat + " (" + lvlName + ": " + lvlILName + ") " + valueString);
+					return;
+				}
 
 				// PB Call
 				PBVarCounter = 0;
@@ -644,25 +680,11 @@ ATM: It work as intendet only the IL Stuff don't work*/
 						}
 					}
 				}
-				var valueString = "";
-				var variables = responseIL2.data.variables.data;
-				variables.forEach(function (variable) {
-					varValueArray.forEach(function (value) {
-						if (variable.values.values[value] != undefined) {
-							valueString = valueString + variable.values.values[value].label + ', '
-						}
-					})
-				})
-				if (valueString) {
-					valueString = valueString.substring(0, valueString.length - 2)
-					valueString = " [" + valueString + "]"
-				}
 
 				if (NoTime == undefined) {
-					$.say(playerCall + "has no PB in " + lvlGame + " - " + lvlCat + " (" + lvlName + ": " + lvlILName + ") " + valueString);
+					$.say(playerCall + " has no PB in " + lvlGame + " - " + lvlCat + " (" + lvlName + ": " + lvlILName + ") " + valueString);
 				}
 				else $.say(playerCall + "'s PB for " + lvlGame + " - " + lvlCat + " (" + lvlName + ": " + lvlILName + ") " + valueString + " is " + PBTime);
-				$.consoleLn(urlPB + querystringPB)
 
 			}
 
