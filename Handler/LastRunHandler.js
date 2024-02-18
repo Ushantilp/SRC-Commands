@@ -11,7 +11,7 @@
 		// Lastrun
 		if (command.equalsIgnoreCase('setlr')) {
 			if (args.length < 1) {
-				$.say("Usage: !setlr {Lastrun Data(Text)}.");
+				$.say("Usage: !setlr {Lastrun Text}.");
 				return;
 			}
 			var modeName = $.getIniDbString('SRCstates', 'currentState', state),

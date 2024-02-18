@@ -11,7 +11,7 @@
 		// Set Goal
 		if (command.equalsIgnoreCase('setgoal')) {
 			if (args.length < 1) {
-				$.say("Usage: !setgoal {Goal Data(Text)}.");
+				$.say("Usage: !setgoal {Goal Text}.");
 				return;
 			}
 			var modeName = $.getIniDbString('SRCstates', 'currentState', state),
