@@ -12,7 +12,81 @@
 				return;
 			}
 	// URL Handling
-			var URLCall = String(args[0]),
+			var URLCallLang = String(args[0]);
+			//Cut Lang Start
+			URLCallIfLang = URLCallLang.slice(25, 31)
+			if (URLCallIfLang == 'ar-EG/') {
+				var LangSplit1 = URLCallLang.split('ar-EG/')[0];
+				var LangSplit2 = URLCallLang.split('ar-EG/')[1];
+				var URLCall = LangSplit1 + LangSplit2
+			}
+			else if (URLCallIfLang == 'es-ES/') {
+				var LangSplit1 = URLCallLang.split('es-ES/')[0];
+				var LangSplit2 = URLCallLang.split('es-ES/')[1];
+				var URLCall = LangSplit1 + LangSplit2
+			}
+			else if (URLCallIfLang == 'de-DE/') {
+				var LangSplit1 = URLCallLang.split('de-DE/')[0];
+				var LangSplit2 = URLCallLang.split('de-DE/')[1];
+				var URLCall = LangSplit1 + LangSplit2
+			}
+			else if (URLCallIfLang == 'fr-FR/') {
+				LangSplit1 = URLCallLang.split('fr-FR/')[0];
+				LangSplit2 = URLCallLang.split('fr-FR/')[1];
+				var URLCall = LangSplit1 + LangSplit2
+			}
+			else if (URLCallIfLang == 'hi-IN/') {
+				LangSplit1 = URLCallLang.split('hi-IN/')[0];
+				LangSplit2 = URLCallLang.split('id-ID/')[1];
+				var URLCall = LangSplit1 + LangSplit2
+			}
+			else if (URLCallIfLang == 'id-ID/') {
+				LangSplit1 = URLCallLang.split('id-ID/')[0];
+				LangSplit2 = URLCallLang.split('it-IT/')[1];
+				var URLCall = LangSplit1 + LangSplit2
+			}
+			else if (URLCallIfLang == 'ja-JP/') {
+				LangSplit1 = URLCallLang.split('ja-JP/')[0];
+				LangSplit2 = URLCallLang.split('ja-JP/')[1];
+				var URLCall = LangSplit1 + LangSplit2
+			}
+			else if (URLCallIfLang == 'ko-KR/') {
+				LangSplit1 = URLCallLang.split('ko-KR/')[0];
+				LangSplit2 = URLCallLang.split('ko-KR/')[1];
+				var URLCall = LangSplit1 + LangSplit2
+			}
+			else if (URLCallIfLang == 'nl-NL/') {
+				LangSplit1 = URLCallLang.split('nl-NL/')[0];
+				LangSplit2 = URLCallLang.split('pl-PL/')[1];
+				var URLCall = LangSplit1 + LangSplit2
+			}
+			else if (URLCallIfLang == 'pt-BR/') {
+				LangSplit1 = URLCallLang.split('pt-BR/')[0];
+				LangSplit2 = URLCallLang.split('pt-BR/')[1];
+				var URLCall = LangSplit1 + LangSplit2
+			}
+			else if (URLCallIfLang == 'ru-RU/') {
+				LangSplit1 = URLCallLang.split('ru-RU/')[0];
+				LangSplit2 = URLCallLang.split('ru-RU/')[1];
+				var URLCall = LangSplit1 + LangSplit2
+			}
+			else if (URLCallIfLang == 'sv-SE/') {
+				LangSplit1 = URLCallLang.split('sv-SE/')[0];
+				LangSplit2 = URLCallLang.split('sv-SE/')[1];
+				var URLCall = LangSplit1 + LangSplit2
+			}
+			else if (URLCallIfLang == 'tr-TR/') {
+				LangSplit1 = URLCallLang.split('tr-TR/')[0];
+				LangSplit2 = URLCallLang.split('tr-TR/')[1];
+				var URLCall = LangSplit1 + LangSplit2
+			}
+			else if (URLCallIfLang == 'zh-CN/') {
+				LangSplit1 = URLCallLang.split('zh-CN/')[0];
+				LangSplit2 = URLCallLang.split('zh-CN/')[1];
+				var URLCall = LangSplit1 + LangSplit2
+			}
+			else (URLCall = URLCallLang);
+			//Cut Lang End
 				URLsplit1 = URLCall.split(".com/")[1];
 				URLsplit2 = URLsplit1.split("/")[0];
 				URLsplit3 = URLsplit1.split("/")[1]
