@@ -69,8 +69,8 @@
 				// Build No varString (example: ID12313154=Value23525)
 				if (var1 == 'undefined' && var2 == 'undefined' && var3 == 'undefined' && var4 == 'undefined' && var5 == 'undefined' && var6 == 'undefined' && var7 == 'undefined' && var8 == 'undefined' && var9 == 'undefined') {
 
-					$.consoleLn("The Leaderboard for " + callGameName + " - " + callCatName + " can be found here:");
-					$.consoleLn(url + callGameID + '?x=' + category);
+					$.say("The Leaderboard for " + callGameName + " - " + callCatName + " can be found here:");
+					$.say(url + callGameID + '?x=' + category);
 					return;
 
 				}
@@ -179,8 +179,8 @@
 						valueString = " [" + valueString + "]"
 					}
 
-				$.consoleLn("The Leaderboard for " + callGameName + " - " + callCatName + valueString + " can be found here:");
-				$.consoleLn(url + callGameID + '?x=' + category + VuSString);
+				$.say("The Leaderboard for " + callGameName + " - " + callCatName + valueString + " can be found here:");
+				$.say(url + callGameID + '?x=' + category + VuSString);
 					return;
 				}
 			}
@@ -227,8 +227,8 @@
 				// Build No varString (example: ID12313154=Value23525)
 				if (var1 == 'undefined' && var2 == 'undefined' && var3 == 'undefined' && var4 == 'undefined' && var5 == 'undefined' && var6 == 'undefined' && var7 == 'undefined' && var8 == 'undefined' && var9 == 'undefined') {
 
-					$.consoleLn("The Leaderboard for " + callGameName + " - " + lvlCat + " (" + lvlName + " ) can be found here:");
-					$.consoleLn(url + callGameID + '?&x=l_' + lvlNameID + '-' + lvlCatID);
+					$.say("The Leaderboard for " + callGameName + " - " + lvlCat + " (" + lvlName + " ) can be found here:");
+					$.say(url + callGameID + '?&x=l_' + lvlNameID + '-' + lvlCatID);
 					return;
 
 				}
@@ -337,8 +337,8 @@
 						valueString = " [" + valueString + "]"
 					}
 
-					$.consoleLn("The Leaderboard for " + callGameName + " - " + callCatName + valueString + " can be found here:");
-					$.consoleLn(url + callGameID + '?&x=l_' + lvlNameID + '-' + lvlCatID + VuSString + ilVuS);
+					$.say("The Leaderboard for " + callGameName + " - " + callCatName + valueString + " can be found here:");
+					$.say(url + callGameID + '?&x=l_' + lvlNameID + '-' + lvlCatID + VuSString + ilVuS);
 					return;
 
 				}
