@@ -1,9 +1,5 @@
 /*
 ##TODOs & Ideas
-TODO 10: Check Goal und LastRun funktion
-TODO 09: Merging IlHandler.js und LvLHandler.js (Maybe?)
-TODO 08: ID & Kürzel & Name Nutzbar machen
-TODO 07: Namen ausgeben lassen für Game, Category und Variablen (getname Command)
 TODO 06: Weitere Variablen erst ermöglichen wenn vorherige gesetzt wurden
 			(if var ID1 undefined = nutze erst var ID1 usw.)
 TODO 05. Wenn datenbank eintrag "Null" oder "undefined" entsprechende Fehlermeldung ausgeben
@@ -11,6 +7,11 @@ TODO 04: Code aufräumen [WIP]
 TODO 03: Credits hinzufügen
 TODO 02: Readme & Dokumentation schreiben
 TODO 01: ID Import aus der URL ermöglichen 
+
+##IDEA's
+IDEA 01: Namen ausgeben lassen für Game, Category und Variablen (getname Command)
+IDEA 02: ID & Kürzel & Name Nutzbar machen
+IDEA 03: Merging IlHandler.js und LvLHandler.js (Maybe?)
 
 ##DONE
 DONE 01: ID Commands überarbeiten (set, del, get)
@@ -35,4 +36,5 @@ DONE 12: PB um Individual Level erweitern
 DONE 13: Im PBHandler Error Handling wenn kein PB verfügbar
 DONE 14: Leaderboard Call in LBHandler.js fertig schreiben
 DONE 15: LBHandler.js um Individual Level erweitern
+DONE 16: Check Goal und LastRun funktion
 */
