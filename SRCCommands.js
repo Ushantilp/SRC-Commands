@@ -1,15 +1,15 @@
-/*############################################################################################################
-###### @Name:		SRC-Commands																		######
-###### @Desciption:	Plugin for Phantombot, to get infos from Speedrun.com in your Twitch Chat			######
-###### @Copyright:	2024 by Ushanti																		######
-###### @Link:		https://www.twitch.tv/entiq_tv														######
-######																									######
-###### Credits:																							######
-###### @Chillinock (https://www.twitch.tv/chillinock) For the Help with some of the Code				######
-###### @Phantombot (https://phantombot.dev) For this Awsome Bot											######
-###### @pelgerr (https://github.com/pelgerr) For the Base if the Code and the ideas the code gave me	######
-######																									######
-############################################################################################################*/
+/*#########################################################################################################
+###### @Name:		SRC-Commands																	 ######
+###### @Desciption:	Plugin for Phantombot, to get infos from Speedrun.com in your Twitch Chat		 ######
+###### @Copyright:	2024 by Ushanti																	 ######
+###### @Link:		https://www.twitch.tv/entiq_tv													 ######
+######																								 ######
+###### Credits:																						 ######
+###### @Chillinock (https://www.twitch.tv/chillinock) For the Help with some of the Code			 ######
+###### @Phantombot (https://phantombot.dev) For this Awsome Bot										 ######
+###### @pelgerr (https://github.com/pelgerr) For the Base if the Code and the ideas the code gave me ######
+######																								 ######
+#########################################################################################################*/
 (function () {
 	//Database Handling
 	// Read current state from database
