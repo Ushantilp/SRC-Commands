@@ -9,6 +9,8 @@ This Modul use a `mode` system.
 This means the bot remembers which mode is active even after a restart or crash
 and for all infos and commands read the **[Dokumentation](https://github.com/Ushantilp/SRC-Commands/wiki "Dokumentation")**
 
+If you know what is Planed for this Module in the next Time you cann Look in the **[ToDo-List](https://github.com/users/Ushantilp/projects/1)**
+* **WARNING:** _The ToDo list ist written in German (because it's my Nativ Language)_ 
 
 
 ### Install:
