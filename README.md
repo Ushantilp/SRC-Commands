@@ -1,7 +1,6 @@
 # First: The Project is Work in Progress
 
-## SRC-Commands
-### About: 
+## About SRC-Commands
 This is a Module for **[Phantombot](https://phantombot.dev "Phantombot")** to use the **[Speedrun.com](Speedrun.com "Speedrun.com")** API, and get Commands like `!wr`, `!pb`, `!lb` and a few more.
 
 This Modul use a `mode` system. 
