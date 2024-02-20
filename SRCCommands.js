@@ -5,9 +5,15 @@
 ###### @Link:		https://www.twitch.tv/entiq_tv													 ######
 ######																								 ######
 ###### Credits:																						 ######
-###### @Chillinock (https://www.twitch.tv/chillinock) For the Help with some of the Code			 ######
-###### @Phantombot (https://phantombot.dev) For this Awsome Bot										 ######
-###### @pelgerr (https://github.com/pelgerr) For the Base if the Code and the ideas the code gave me ######
+###### @Chillinock - For the Help with some of the Code at the Beginning							 ######
+###### (https://www.twitch.tv/chillinock)															 ######
+######																								 ######
+###### @gmt2001 (https://github.com/gmt2001) & @BrandenB (https://github.com/BrandenB)               ######
+###### for Making the Awesome Phantombot (https://phantombot.dev)									 ######
+######																								 ######
+###### @Phantombot-Community you can find them on Discord (https://discord.com/invite/YKvMd78)       ######
+######																								 ######
+###### @pelgerr (https://github.com/pelgerr) For the mode function that gave me the idea			 ######
 ######																								 ######
 #########################################################################################################*/
 (function () {
