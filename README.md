@@ -12,7 +12,7 @@ If you know what is Planed for this Module in the next Time you cann Look in the
 * **WARNING:** _The ToDo list ist written in German (because it's my Nativ Language)_ 
 
 
-### Install:
+## Install:
 1. Get **[Phantombot](https://phantombot.dev "Phantombot")**
 2. Download the Latest **[Release](https://github.com/Ushantilp/SRC-Commands/releases "Releases")**
 3. Put the Complete SRC-Commands Folder in `\PhantomBot\scripts\custom\` 
@@ -22,12 +22,12 @@ If you know what is Planed for this Module in the next Time you cann Look in the
 +
 5. **Profit** 
 
-### Issues:
+## Issues:
 I wrote this module to finally learn more about coding (and i learn a lot)
 
 If you find problems or any errors occur, please use the **[Issues Page](https://github.com/Ushantilp/SRC-Commands/issues "Any Issues go here")**
 
-### Special Thanks:
+## Special Thanks:
 Special thanks go to:
 + **[gmt2001](https://github.com/gmt2001)** & **[BrandenB](https://github.com/BrandenB)** for Making the Awesome **[Phantombot](https://phantombot.dev "Phantombot")**
 + The **[Phantombot](https://phantombot.dev "Phantombot")** Community (you can find them on **[Discord](https://discord.com/invite/YKvMd78)**
@@ -35,10 +35,10 @@ Special thanks go to:
 + **[pelgerr](https://github.com/pelgerr)** For the mode function that gave me the idea to made this Module
 
 
-### Support:
+## Support:
 If you want support me and my work you can Donate Here **[Paypal.me](https://paypal.me/Ushanti)**
 
-### Contact:
+## Contact:
 You can find me here:
 + **[Speedrun.com](https://speedrun.com/user/Ushanti)** - I will get soon Back to Speedrunning
 + **[Discord](https://discord.gg/VDNp6rE4mG)** - Our Community Discord Server
