@@ -3,6 +3,7 @@
 ## SRC-Commands
 ### About: 
 This is a Module for **[Phantombot](https://phantombot.dev "Phantombot")** to use the **[Speedrun.com](Speedrun.com "Speedrun.com")** API
+
 and get Commands like `!wr`, `!pb`, `!lb` and a few more.
 
 This Modul use a `mode` system. 
@@ -25,6 +26,7 @@ If you know what is Planed for this Module in the next Time you cann Look in the
 
 ### Issues:
 I wrote this module to finally learn more about coding (and i learn a lot)
+
 If you find problems or any errors occur, please use the **[Issues Page](https://github.com/Ushantilp/SRC-Commands/issues "Any Issues go here")**
 
 ### Special Thanks:
@@ -41,6 +43,9 @@ If you want support me and my work you can Donate Here **[Paypal.me](https://pay
 ### Contact:
 You can find me here:
 **[Speedrun.com](https://speedrun.com/user/Ushanti)** - I will get soon Back to Speedrunning
+
 **[Discord](https://discord.gg/VDNp6rE4mG)** - Our Community Discord Server
+
 **[Twitch](https://twitch.com/entiq_tv)** - My GF and I streaming here from time to time
+
 **[Youtube](https://www.youtube.com/@ushantispeedruns)** - Speedrunning Channel (*Get some love soon*)
