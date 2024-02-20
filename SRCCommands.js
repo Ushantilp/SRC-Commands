@@ -1,20 +1,20 @@
 /*############################################################################################################
-###### @Name:       SRC-Commands #############################################################################
-###### @Desciption: Plugin for Phantombot, to get infos from Speedrun.com in your Twitch Chat ################
-###### @Copyright:  2024 by Ushanti ##########################################################################
-###### @Link:       https://www.twitch.tv/entiq_tv ###########################################################
-##############################################################################################################
-###### Credits:	##############################################################################################
-###### @Chillinock - For the Help with some of the Code at the Beginning #####################################
-###### (https://www.twitch.tv/chillinock) ####################################################################
-##############################################################################################################
-###### @gmt2001 (https://github.com/gmt2001) & @BrandenB (https://github.com/BrandenB) #######################
-###### for Making the Awesome Phantombot (https://phantombot.dev) ############################################
-##############################################################################################################
-###### @Phantombot-Community you can find them on Discord (https://discord.com/invite/YKvMd78) ###############
-##############################################################################################################
-###### @pelgerr (https://github.com/pelgerr) For the mode function that gave me the idea #####################
-##############################################################################################################
+###### @Name:       SRC-Commands                                                                        ######
+###### @Desciption: Plugin for Phantombot, to get infos from Speedrun.com in your Twitch Chat           ######
+###### @Copyright:  2024 by Ushanti                                                                     ######
+###### @Link:       https://www.twitch.tv/entiq_tv                                                      ######
+######                                                                                                  ######
+###### Credits:	                                                                                        ######
+###### @Chillinock - For the Help with some of the Code at the Beginning                                ######
+###### (https://www.twitch.tv/chillinock)                                                               ######
+######                                                                                                  ######
+###### @gmt2001 (https://github.com/gmt2001) & @BrandenB (https://github.com/BrandenB)                  ######
+###### for Making the Awesome Phantombot (https://phantombot.dev)                                       ######
+######                                                                                                  ######
+###### @Phantombot-Community you can find them on Discord (https://discord.com/invite/YKvMd78)          ######
+######                                                                                                  ######
+###### @pelgerr (https://github.com/pelgerr) For the mode function that gave me the idea                ######
+######                                                                                                  ######
 ############################################################################################################*/
 (function () {
 	//Database Handling
