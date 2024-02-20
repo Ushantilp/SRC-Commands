@@ -14,7 +14,7 @@ If you know what is Planed for this Module in the next Time you cann Look in the
 ## Install:
 1. Get **[Phantombot](https://phantombot.dev "Phantombot")**
 2. Download the Latest **[Release](https://github.com/Ushantilp/SRC-Commands/releases "Releases")**
-3. Put the Complete SRC-Commands Folder in `\PhantomBot\scripts\custom\` 
+3. Put the Complete SRC-Commands Folder in `..\PhantomBot\scripts\custom\` 
 4. *Maybe you must Aktivate the Modul in your Phantombot Dashboard*
 +
 +
@@ -29,7 +29,7 @@ If you find problems or any errors occur, please use the **[Issues Page](https:/
 ## Special Thanks:
 Special thanks go to:
 + **[gmt2001](https://github.com/gmt2001)** & **[BrandenB](https://github.com/BrandenB)** for Making the Awesome **[Phantombot](https://phantombot.dev "Phantombot")**
-+ The **[Phantombot](https://phantombot.dev "Phantombot")** Community (you can find them on **[Discord](https://discord.com/invite/YKvMd78)**
++ The **[Phantombot](https://phantombot.dev "Phantombot")** Community (you can find them on **[Discord](https://discord.com/invite/YKvMd78)**)
 + **[Chillinock](https://www.twitch.tv/chillinock)** for helping me with some of the Code at the Beginning
 + **[pelgerr](https://github.com/pelgerr)** For the mode function that gave me the idea to made this Module
 
