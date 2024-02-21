@@ -27,7 +27,7 @@
 				return;
 			}
 			var modeName = $.getIniDbString('SRCstates', 'currentState', state);
-			$.setIniDbString('SRCTableLR', modeName, '');
+			$.inidb.del('SRCTableLR', modeName);
 			$.say("Lastrun data for " + modeName + " successfully deleted!");
 		}
 

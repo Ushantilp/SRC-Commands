@@ -27,7 +27,7 @@
 				return;
 			}
 			var modeName = $.getIniDbString('SRCstates', 'currentState', state);
-			$.setIniDbString('SRCTableGoal', modeName, 'undefined');
+			$.inidb.del('SRCTableGoal', modeName);
 			$.say("Goal data for " + modeName + " successfully deleted!");
 		}
 
