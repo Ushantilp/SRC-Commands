@@ -30,7 +30,7 @@
 				return;
 			}
 			var	modeName = $.getIniDbString('SRCstates', 'currentState', state);
-			$.setIniDbString('SRCTableIL', modeName, 'undefined');
+			$.inidb.del('SRCTableIL', modeName);
 			$.say("IL Variable & Value for " + modeName + " successfully deleted!");
 		}
 

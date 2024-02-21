@@ -26,7 +26,7 @@
                 return;
             }
             var modeName = $.getIniDbString('SRCstates', 'currentState', state);
-            $.setIniDbString('SRCTableCat', modeName, 'undefined');
+            $.inidb.del('SRCTableCat', modeName);
             $.say("Category ID for " + modeName + " successfully deleted!");
         }
 

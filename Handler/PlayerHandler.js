@@ -28,7 +28,7 @@
             return;
             }
             var modeName = $.getIniDbString('SRCstates', 'currentState', state);
-            $.setIniDbString('SRCTablePlayer', modeName, 'undefined');
+            $.inidb.del('SRCTablePlayer', modeName);
             $.say("Player ID for " + modeName + " successfully deleted!");
         }
 		

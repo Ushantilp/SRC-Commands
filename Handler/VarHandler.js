@@ -34,7 +34,7 @@
 			var varNumber = String(args[0]),
 				dbStringName = 'SRCTableVar' + varNumber;
 			modeName = $.getIniDbString('SRCstates', 'currentState', state);
-			$.setIniDbString(dbStringName, modeName, 'undefined');
+			$.inidb.del(dbStringName, modeName);
 			$.say("variables ID for " + modeName + " successfully deleted!");
 		}
 

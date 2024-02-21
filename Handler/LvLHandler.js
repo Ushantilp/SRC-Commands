@@ -27,8 +27,8 @@
                 return;
             }
             var modeName = $.getIniDbString('SRCstates', 'currentState', state);
-            $.setIniDbString('SRCTableLvL', modeName, 'undefined');
-            $.setIniDbString('SRCTableILstate', modeName, 'undefined')
+            $.inidb.del('SRCTableLvL', modeName);
+            $.inidb.del('SRCTableILstate', modeName)
             $.say("Level ID for " + modeName + " successfully deleted!");
         }
 
