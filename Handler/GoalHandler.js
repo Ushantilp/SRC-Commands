@@ -33,7 +33,7 @@
 
 		// Get Goal
 		if (command.equalsIgnoreCase('goal')) {
-			var modeName = state,
+			var modeName = $.getIniDbString('SRCstates', 'currentState', state);
 				goalData = $.getIniDbString('SRCTableGoal', modeName, 'undefined');
 			if (modeName == 'unset') {
 				$.say("Please set a mode.");

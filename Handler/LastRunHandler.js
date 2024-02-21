@@ -27,13 +27,13 @@
 				return;
 			}
 			var modeName = $.getIniDbString('SRCstates', 'currentState', state);
-			$.setIniDbString('SRCTableLR', modeName, 'undefined');
+			$.setIniDbString('SRCTableLR', modeName, '');
 			$.say("Lastrun data for " + modeName + " successfully deleted!");
 		}
 
 		// Get Lastrun
 		if (command.equalsIgnoreCase('lr')) {
-			var modeName = state,
+			var modeName = $.getIniDbString('SRCstates', 'currentState', state);
 				lrData = $.getIniDbString('SRCTableLR', modeName, 'undefined');
 			if (modeName == 'unset') {
 				$.say("Please set a mode.");
