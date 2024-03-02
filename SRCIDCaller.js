@@ -1,4 +1,6 @@
 (function () {
+	var state = $.getIniDbString('SRCstates', 'currentState', 'undefined');
+	var modeName = $.getIniDbString('SRCstates', 'currentState', state);
 	$.bind('command', function (event) {
 		var command = event.getCommand(),
 			args = event.getArgs(),
@@ -8,7 +10,7 @@
 	// URL ID Caller
 		if (command.equalsIgnoreCase('callid')) {
 			if (args.length != 1) {
-				$.say("Usage: !callid {Leaderboard URL from Speedrun.com}");
+				$.say("Usage: !callid {Leaderboard/User URL from Speedrun.com}");
 				return;
 			}
 	// URL Handling
@@ -100,7 +102,8 @@
 				userJSON = JSON.parse($.customAPI.get(userURL + Usplit).content);
 				userName = userJSON.data.names.international;
 				userID = userJSON.data.id;
-				$.say('The User ID for "'+ userName +'" is: '+ userID);
+				$.say('The User ID for "' + userName + '" is: ' + userID);
+				$.setIniDbString('SRCTablePlayer', modeName, userID);
 				return;
 			}
 
@@ -113,6 +116,7 @@
 			gameName = gameJSON.data.names.international
 			gameID = gameJSON.data.id;
 			$.say('The Game ID for "' + gameName + '" is: ' + gameID);
+			$.setIniDbString('SRCTableGame', modeName, gameID);
 
 
 	// Indiviuale Level Check
@@ -127,13 +131,19 @@
 				lvlName = lvlJSON.data.name;
 				lvlID = lvlJSON.data.id;
 				$.say('The Level ID for "' + lvlName + '" is: ' + lvlID);
+				$.setIniDbString('SRCTableLvL', modeName, lvlID);
+				$.setIniDbString('SRCTableILstate', modeName, 'true');
 
 				ilURL = "https://www.speedrun.com/api/v1/categories/";
 				ilJSON = JSON.parse($.customAPI.get(ilURL + Lsplit3).content);
 				ilName = ilJSON.data.name;
 				ilID = ilJSON.data.id;
 				$.say('The IL Category ID for "' + ilName + '" is: ' + ilID);
+				ilGesamt = lvlID + '=' + ilID
+				$.setIniDbString('SRCTableIL', modeName, ilGesamt);
+
 				var catID = ilID
+				$.setIniDbString('SRCTableCat', modeName, catID);
 				var ilFalse = lvlName
 			}
 			if (ilFalse == undefined) {
@@ -145,10 +155,18 @@
 				catName = catJSON.data.name;
 				catID = catJSON.data.id;
 				$.say('The Category ID for "' + catName + '" is: ' + catID);
+				$.setIniDbString('SRCTableCat', modeName, catID);
+				$.inidb.del('SRCTableILstate', modeName);
+				$.inidb.del('SRCTableIL', modeName);
+				$.inidb.del('SRCTableLvL', modeName);
 				}
 	// Variable & Value Name & ID Call
 			varURL = "https://www.speedrun.com/api/v1/variables/";
-		// Var 1
+			// Var 1
+			var1Check = $.getIniDbString('SRCTableVar1', modeName, undefined);
+			if (var1Check != undefined) {
+				$.inidb.del('SRCTableVar1', modeName);
+			}
 			var1Split1 = URLCall.split(catID + "-")[1];
 			if (var1Split1 == undefined) {
 				return;
@@ -167,8 +185,18 @@
 			var1ID = var1JSON.data.id;
 			val1Name = var1JSON.data.values.values[var1Split4].label;
 			val1ID = var1Split4;
+			var1Gesamt = var1ID + "=" + val1ID;
+			ifILvar = URLCall.split(var1Split2 + "-")[1];
+			if (ifILvar == undefined && ilFalse != undefined) {
+				$.setIniDbString('SRCTableIL', modeName, var1Gesamt);
+			}
+			else $.setIniDbString('SRCTableVar1', modeName, var1Gesamt);
 			$.say('The Variable & Value ID for "' + var1Name + ': ' + val1Name + '" is: ' + var1ID + ' & ' + val1ID);
-		// Var 2
+			// Var 2
+			var2Check = $.getIniDbString('SRCTableVar2', modeName, undefined);
+			if (var2Check != undefined) {
+				$.inidb.del('SRCTableVar2', modeName);
+			}
 			var2Split1 = URLCall.split(var1Split2 + "-")[1];
 			if (var2Split1 == undefined) {
 				return;
@@ -187,8 +215,18 @@
 			var2ID = var2JSON.data.id;
 			val2Name = var2JSON.data.values.values[var2Split4].label;
 			val2ID = var2Split4;
+			var2Gesamt = var2ID + "=" + val2ID;
+			ifILvar = URLCall.split(var2Split2 + "-")[1];
+			if (ifILvar == undefined && ilFalse != undefined) {
+				$.setIniDbString('SRCTableIL', modeName, var2Gesamt);
+			}
+			else $.setIniDbString('SRCTableVar2', modeName, var2Gesamt);
 			$.say('The Variable & Value ID for "' + var2Name + ': ' + val2Name + '" is: ' + var2ID + ' & ' + val2ID);
-		// Var 3
+			// Var 3
+			var3Check = $.getIniDbString('SRCTableVar3', modeName, undefined);
+			if (var3Check != undefined) {
+				$.inidb.del('SRCTableVar3', modeName);
+			}
 			var3Split1 = URLCall.split(var2Split2 + "-")[1];
 			if (var3Split1 == undefined) {
 				return;
@@ -207,8 +245,18 @@
 			var3ID = var3JSON.data.id;
 			val3Name = var3JSON.data.values.values[var3Split4].label;
 			val3ID = var3Split4;
+			var3Gesamt = var3ID + "=" + val3ID;
+			ifILvar = URLCall.split(var3Split2 + "-")[1];
+			if (ifILvar == undefined && ilFalse != undefined) {
+				$.setIniDbString('SRCTableIL', modeName, var3Gesamt);
+			}
+			else $.setIniDbString('SRCTableVar3', modeName, var3Gesamt);
 			$.say('The Variable & Value ID for "' + var3Name + ': ' + val3Name + '" is: ' + var3ID + ' & ' + val3ID);
-		// Var 4
+			// Var 4
+			var4Check = $.getIniDbString('SRCTableVar4', modeName, undefined);
+			if (var4Check != undefined) {
+				$.inidb.del('SRCTableVar4', modeName);
+			}
 			var4Split1 = URLCall.split(var3Split2 + "-")[1];
 			if (var4Split1 == undefined) {
 				return;
@@ -227,8 +275,18 @@
 			var4ID = var4JSON.data.id;
 			val4Name = var4JSON.data.values.values[var4Split4].label;
 			val4ID = var4Split4;
+			var4Gesamt = var4ID + "=" + val4ID;
+			ifILvar = URLCall.split(var4Split2 + "-")[1];
+			if (ifILvar == undefined && ilFalse != undefined) {
+				$.setIniDbString('SRCTableIL', modeName, var4Gesamt);
+			}
+			else $.setIniDbString('SRCTableVar4', modeName, var4Gesamt);
 			$.say('The Variable & Value ID for "' + var4Name + ': ' + val4Name + '" is: ' + var4ID + ' & ' + val4ID);
-		// Var 5
+			// Var 5
+			var5Check = $.getIniDbString('SRCTableVar5', modeName, undefined);
+			if (var5Check != undefined) {
+				$.inidb.del('SRCTableVar5', modeName);
+			}
 			var5Split1 = URLCall.split(var4Split2 + "-")[1];
 			if (var5Split1 == undefined) {
 				return;
@@ -247,8 +305,18 @@
 			var5ID = var5JSON.data.id;
 			val5Name = var5JSON.data.values.values[var5Split4].label;
 			val5ID = var5Split4;
+			var5Gesamt = var5ID + "=" + val5ID;
+			ifILvar = URLCall.split(var5Split2 + "-")[1];
+			if (ifILvar == undefined && ilFalse != undefined) {
+				$.setIniDbString('SRCTableIL', modeName, var5Gesamt);
+			}
+			else $.setIniDbString('SRCTableVar5', modeName, var5Gesamt);
 			$.say('The Variable & Value ID for "' + var5Name + ': ' + val5Name + '" is: ' + var5ID + ' & ' + val5ID);
-		// Var 6
+			// Var 6
+			var6Check = $.getIniDbString('SRCTableVar6', modeName, undefined);
+			if (var6Check != undefined) {
+				$.inidb.del('SRCTableVar6', modeName);
+			}
 			var6Split1 = URLCall.split(var5Split2 + "-")[1];
 			if (var6Split1 == undefined) {
 				return;
@@ -267,8 +335,18 @@
 			var6ID = var6JSON.data.id;
 			val6Name = var6JSON.data.values.values[var6Split4].label;
 			val6ID = var6Split4;
+			var6Gesamt = var6ID + "=" + val6ID;
+			ifILvar = URLCall.split(var6Split2 + "-")[1];
+			if (ifILvar == undefined && ilFalse != undefined) {
+				$.setIniDbString('SRCTableIL', modeName, var6Gesamt);
+			}
+			else $.setIniDbString('SRCTableVar6', modeName, var6Gesamt);
 			$.say('The Variable & Value ID for "' + var6Name + ': ' + val6Name + '" is: ' + var6ID + ' & ' + val6ID);
-		// Var 7
+			// Var 7
+			var7Check = $.getIniDbString('SRCTableVar7', modeName, undefined);
+			if (var7Check != undefined) {
+				$.inidb.del('SRCTableVar7', modeName);
+			}
 			var7Split1 = URLCall.split(var6Split2 + "-")[1];
 			if (var7Split1 == undefined) {
 				return;
@@ -287,8 +365,18 @@
 			var7ID = var7JSON.data.id;
 			val7Name = var7JSON.data.values.values[var7Split4].label;
 			val7ID = var7Split4;
+			var7Gesamt = var7ID + "=" + val7ID;
+			ifILvar = URLCall.split(var7Split2 + "-")[1];
+			if (ifILvar == undefined && ilFalse != undefined) {
+				$.setIniDbString('SRCTableIL', modeName, var7Gesamt);
+			}
+			else $.setIniDbString('SRCTableVar7', modeName, var7Gesamt);
 			$.say('The Variable & Value ID for "' + var7Name + ': ' + val7Name + '" is: ' + var7ID + ' & ' + val7ID);
-		// Var 8
+			// Var 8
+			var8Check = $.getIniDbString('SRCTableVar8', modeName, undefined);
+			if (var8Check != undefined) {
+				$.inidb.del('SRCTableVar8', modeName);
+			}
 			var8Split1 = URLCall.split(var7Split2 + "-")[1];
 			if (var8Split1 == undefined) {
 				return;
@@ -307,8 +395,18 @@
 			var8ID = var8JSON.data.id;
 			val8Name = var8JSON.data.values.values[var8Split4].label;
 			val8ID = var8Split4;
+			var8Gesamt = var8ID + "=" + val8ID;
+			ifILvar = URLCall.split(var8Split2 + "-")[1];
+			if (ifILvar == undefined && ilFalse != undefined) {
+				$.setIniDbString('SRCTableIL', modeName, var8Gesamt);
+			}
+			else $.setIniDbString('SRCTableVar8', modeName, var8Gesamt);
 			$.say('The Variable & Value ID for "' + var8Name + ': ' + val8Name + '" is: ' + var8ID + ' & ' + val8ID);
-		// Var 9
+			// Var 9
+			var9Check = $.getIniDbString('SRCTableVar9', modeName, undefined);
+			if (var9Check != undefined) {
+				$.inidb.del('SRCTableVar9', modeName);
+			}
 			var9Split1 = URLCall.split(var8Split2 + "-")[1];
 			if (var9Split1 == undefined) {
 				return;
@@ -327,6 +425,11 @@
 			var9ID = var9JSON.data.id;
 			val9Name = var9JSON.data.values.values[var9Split4].label;
 			val9ID = var9Split4;
+			var9Gesamt = var9ID + "=" + val9ID;
+			if (ilFalse != undefined) {
+				$.setIniDbString('SRCTableIL', modeName, var9Gesamt);
+			}
+			else	$.setIniDbString('SRCTableVar9', modeName, var9Gesamt);
 			$.say('The Variable & Value ID for "' + var9Name + ': ' + val9Name + '" is: ' + var9ID + ' & ' + val9ID);
 		}
 	});
