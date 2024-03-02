@@ -166,11 +166,13 @@
 					//			Workaround END
 
 					var valueString = "";
+					var variableString = "";
 					var variables = varNameJSON.data.variables.data;
 					variables.forEach(function (variable) {
 						varValueArray.forEach(function (value) {
 							if (variable.values.values[value] != undefined) {
-								valueString = valueString + variable.values.values[value].label + ', '
+								variablesName = JSON.parse($.customAPI.get(variableString + variable.links[0].uri).content);
+								valueString = valueString + variablesName.data.name + ": " + variable.values.values[value].label + ', '
 							}
 						})
 					})
@@ -324,11 +326,13 @@
 					//			Workaround END
 					
 					var valueString = "";
+					var variableString = "";
 					var variables = ILvarNameJSON.data.variables.data;
 					variables.forEach(function (variable) {
 						varValueArray.forEach(function (value) {
 							if (variable.values.values[value] != undefined) {
-								valueString = valueString + variable.values.values[value].label + ', '
+								variablesName = JSON.parse($.customAPI.get(variableString + variable.links[0].uri).content);
+								valueString = valueString + variablesName.data.name + ": " + variable.values.values[value].label + ', '
 							}
 						})
 					})
