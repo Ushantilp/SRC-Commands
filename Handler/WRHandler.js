@@ -256,11 +256,13 @@
 
 
 					var valueString = "";
+					var variableString = "";
 					var variables = response2.data.variables.data;
 					variables.forEach(function (variable) {
 						varValueArray.forEach(function (value) {
 							if (variable.values.values[value] != undefined) {
-								valueString = valueString + variable.values.values[value].label + ', '
+								variablesName = JSON.parse($.customAPI.get(variableString + variable.links[0].uri).content);
+								valueString = valueString + variablesName.data.name + ": " + variable.values.values[value].label + ', '
 							}
 						})
 					})
@@ -535,11 +537,13 @@
 				bestTime = bestTime.replace('S', 's ')
 
 				var valueString = "";
+				var variableString = "";
 				var variables = responseIL2.data.variables.data;
 				variables.forEach(function (variable) {
 					varValueArray.forEach(function (value) {
 						if (variable.values.values[value] != undefined) {
-							valueString = valueString + variable.values.values[value].label + ', '
+							variablesName = JSON.parse($.customAPI.get(variableString + variable.links[0].uri).content);
+							valueString = valueString + variablesName.data.name + ": " + variable.values.values[value].label + ', '
 						}
 					})
 				})
