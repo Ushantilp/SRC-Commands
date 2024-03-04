@@ -147,7 +147,7 @@
 					var ilFalse = lvlName
 				}
 				if (ilFalse == undefined) {
-					// Cat Name & ID Call
+				// Cat Name & ID Call
 					Csplit1 = URLCall.split("&x=")[1];
 					Csplit2 = Csplit1.split("-")[0];
 					catURL = "https://www.speedrun.com/api/v1/categories/";
