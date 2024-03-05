@@ -2,6 +2,7 @@
 	//Database Handling
 	// Read current state from database
     var state = $.getIniDbString('SRCstates', 'currentState', 'undefined');
+    var modeName = $.getIniDbString('SRCstates', 'currentState', state);
     $.bind('command', function(event) {
 		var command = event.getCommand(),
 			args = event.getArgs(),
@@ -11,8 +12,9 @@
 
 	// Mode handling
         if (command.equalsIgnoreCase('mode')) {
-            if (args.length < 1) {$.say("Mode currently set to " + state); 
-            return;
+            if (args.length < 1) {
+                $.say('Usage: !mode {mode Name}');
+                return;
             }
             state = String(args[0].toLowerCase());
             $.setIniDbString('SRCstates', 'currentState', state);
@@ -25,12 +27,17 @@
             return;
             }
             var modeName = $.getIniDbString('SRCstates', 'currentState', state);
-            $.say("The current Mode is " + modeName);
+            if (modeName == 'undefined') {
+                $.say('There are no mode set.')
+                return;
+            }
+           else $.say("The current Mode is " + modeName);
 		}
 		
 		// Mode list
 		var modeName = $.getIniDbString('SRCstates', 'currentState', state);
-            $.setIniDbString('SRCTableModes', modeName, ''); 
+        $.setIniDbString('SRCTableModes', modeName, '-');
+        $.inidb.del('SRCTableModes', undefined);
 
         // Get Mode List
         if (command.equalsIgnoreCase('listmode')) {
