@@ -8,9 +8,9 @@
 			sender = event.getSender();
 
 	// URL ID Caller
-		if (command.equalsIgnoreCase('callid')) {
+		if (command.equalsIgnoreCase('src')) {
 			if (args.length != 1) {
-				$.say("Usage: !callid {Leaderboard/User URL from Speedrun.com}");
+				$.say("Usage: !src {Leaderboard/User URL from Speedrun.com}");
 				return;
 			}
 			// URL Handling
@@ -97,6 +97,7 @@
 				return;
 			}
 			if (URLsplit2 == 'users') {
+			var modeName = $.getIniDbString('SRCstates', 'currentState', state);
 				Usplit = URLsplit1.split("/")[1];
 				userURL = "https://www.speedrun.com/api/v1/users/";
 				userJSON = JSON.parse($.customAPI.get(userURL + Usplit).content);
@@ -109,6 +110,7 @@
 
 		// Game Name & ID Call
 			if (URLsplit2 != 'users') {
+			var modeName = $.getIniDbString('SRCstates', 'currentState', state);
 				Gsplit1 = URLCall.split(".com/")[1];
 				Gsplit2 = Gsplit1.split("?h=")[0];
 				Gsplit3 = Gsplit2.split("/levels")[0];
@@ -121,9 +123,10 @@
 
 
 		// Indiviuale Level Check
-			if (URLCall.split("&x=l_")[1] != undefined) {
+			if (URLCall.split("x=l_")[1] != undefined) {
 				// Level Name & ID Call
-					Lsplit1 = URLCall.split("&x=l_")[1];
+				var modeName = $.getIniDbString('SRCstates', 'currentState', state);
+					Lsplit1 = URLCall.split("x=l_")[1];
 					Lsplit2 = Lsplit1.split("-")[0];
 					Lsplit3 = Lsplit1.split("-")[1];
 					lvlURL = "https://www.speedrun.com/api/v1/levels/";
@@ -148,7 +151,8 @@
 				}
 				if (ilFalse == undefined) {
 				// Cat Name & ID Call
-					Csplit1 = URLCall.split("&x=")[1];
+				var modeName = $.getIniDbString('SRCstates', 'currentState', state);
+					Csplit1 = URLCall.split("x=")[1];
 					Csplit2 = Csplit1.split("-")[0];
 					catURL = "https://www.speedrun.com/api/v1/categories/";
 					catJSON = JSON.parse($.customAPI.get(catURL + Csplit2).content);
@@ -162,6 +166,7 @@
 				}
 		// Variable & Value Name & ID Call
 				varURL = "https://www.speedrun.com/api/v1/variables/";
+			var modeName = $.getIniDbString('SRCstates', 'currentState', state);
 			// Var 1
 				var1Check = $.getIniDbString('SRCTableVar1', modeName, undefined);
 				if (var1Check != undefined) {
