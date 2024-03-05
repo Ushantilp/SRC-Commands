@@ -11,8 +11,8 @@
 		// Reading data
 		// World Record
 		if (command.equalsIgnoreCase('wr')) {
-			var modeName = $.getIniDbString('SRCstates', 'currentState', state),
-				game = $.getIniDbString('SRCTableGame', modeName, state);
+			var modeName = $.getIniDbString('SRCstates', 'currentState', state);
+			var	game = $.getIniDbString('SRCTableGame', modeName, state);
 			category = $.getIniDbString('SRCTableCat', modeName, 'undefined');
 			isIL = $.getIniDbString('SRCTableILstate', modeName, state);
 			lvl = $.getIniDbString('SRCTableLvL', modeName, 'undefined');
@@ -46,8 +46,12 @@
 			lvlILVarJSON = JSON.parse($.customAPI.get(urlLvlVar + var1.split("=")[0]).content);
 			lvlILNameJSON = JSON.parse($.customAPI.get(urlLvlVar + ilvar.split("=")[0]).content);
 
-			if (modeName == 'unset') {
+			if (modeName == 'undefined') {
 				$.say("Please set a mode.");
+				return;
+			}
+			if ($.getIniDbString('SRCTableGame', modeName, 'undefined') == 'undefined') {
+				$.say('Set a Game first! Usage: !src {SRC-Leaderboard URL}');
 				return;
 			}
 
