@@ -52,16 +52,16 @@
 			lvlILNameJSON = JSON.parse($.customAPI.get(urlLvlVar + ilvar.split("=")[0]).content);
 		
 
-			if (modeName == 'unset') {
+			if (modeName == 'undefined') {
 				$.say("Please set a mode.");
 				return;
 			}
-			if (player == '') {
-				$.say('Set a Player ID first! Usage: !setplayerid {SRC-User ID}');
+			if ($.getIniDbString('SRCTableGame', modeName, 'undefined') == 'undefined') {
+				$.say('Set a Game first! Usage: !src {SRC-Leaderboard URL}');
 				return;
 			}
-			if (game == '' || game == 'undefined') {
-				$.say('Set a Game ID first! Usage: !setgameid {SRC-Game ID}');
+			if ($.getIniDbString('SRCTablePlayer', modeName, 'undefined') == 'undefined') {
+				$.say('Set a Player first! Usage: !src {SRC-User URL}');
 				return;
 			}
 
