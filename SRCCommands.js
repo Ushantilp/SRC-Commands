@@ -30,7 +30,7 @@
 // Register commands and set premission levels (0 = broadcaster, 1 = Editor, 2 = moderator, 7 = viewer)
 	$.bind('initReady', function () {
 		//ID Caller
-		$.registerChatCommand('./custom/SRC-Commands/SRCIDCaller.js', 'src', 2);
+		$.registerChatCommand('./custom/SRC-Commands/SRCCaller.js', 'src', 2);
 		//Mode Handling
 		$.registerChatCommand('./custom/SRC-Commands/Handler/ModeHandler.js', 'mode', 2);
 		$.registerChatCommand('./custom/SRC-Commands/Handler/ModeHandler.js', 'getmode', 2);
