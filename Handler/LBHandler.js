@@ -37,8 +37,12 @@
 			var varNameJSON = JSON.parse($.customAPI.get(APIurl + varString + querystring).content);
 			var ILvarNameJSON = JSON.parse($.customAPI.get(urlLvlIL + varString + querystring).content);
 
-			if (modeName == 'unset') {
+			if (modeName == 'undefined') {
 				$.say("Please set a mode.");
+				return;
+			}
+			if ($.getIniDbString('SRCTableGame', modeName, 'undefined') == 'undefined') {
+				$.say('Set a Game first! Usage: !src {SRC-Leaderboard URL}');
 				return;
 			}
 
@@ -341,7 +345,7 @@
 						valueString = " [" + valueString + "]"
 					}
 
-					$.say("The Leaderboard for " + callGameName + " - " + callCatName + valueString + " can be found here:");
+					$.say("The Leaderboard for " + callGameName + " - " + callCatName + " (" + lvlName + ": " + lvlILName + ") " + valueString + " can be found here:");
 					$.say(url + callGameID + '?&x=l_' + lvlNameID + '-' + lvlCatID + VuSString + ilVuS);
 					return;
 
