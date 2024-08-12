@@ -1,3 +1,4 @@
+// Test
 (function () {
 	var state = $.getIniDbString('SRCstates', 'currentState', 'undefined');
 	var modeName = $.getIniDbString('SRCstates', 'currentState', state);
